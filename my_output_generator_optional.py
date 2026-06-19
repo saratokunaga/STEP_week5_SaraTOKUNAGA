@@ -11,7 +11,7 @@ def generate_output():
     for i in range(CHALLENGES):
         cities = read_input(f'input_{i}.csv')
         for solver, name in [(my_solver_optional, 'output')]:
-            answer = solver.solve(cities)
+            answer = solver.main(cities)
             tour = answer[0] #[1,4,2,6,...]
 
             with open(f'{name}_{i}.csv', 'w') as f:
